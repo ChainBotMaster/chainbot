@@ -1,4 +1,4 @@
-# Bot for [Chaincoin's Discord](https://discord.gg/tgnNHf5)
+# Bot for [Chaincoin's Discord](https://discord.gg/NabdcJ7)
 
 (This README will be updated along with bot updates)
 
