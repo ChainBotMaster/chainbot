@@ -1,0 +1,28 @@
+{  
+    "dependencies":{  
+        "bitcoin-core":"^1.2.0",
+        "config":"^1.27.0",
+        "console-stamp":"^0.2.6",
+        "discord.js":"^11.2.1",
+        "needle":"^2.0.1",
+        "node-cache":"^4.1.1"
+    },
+    "scripts":{  
+        "prettier":"prettier * --write",
+        "build":"babel bot -d dist",
+        "prod":"babel bot -d dist & node dist/bot.js",
+        "lint":"prettier --write bot/**/*.js",
+        "precommit":"prettier --write bot/**/*.js"
+    },
+    "devDependencies":{  
+        "husky":"^0.14.3",
+        "prettier":"1.8.1"
+    },
+    "name":"chainbot",
+    "version":"0.0.1",
+    "description":"Infomation Bot for Chaincoin Discord",
+    "main":"bot.js",
+    "repository":"https://github.com/ChainBotMaster/chainbot",
+    "author":"ChainBotMaster",
+    "license":"MIT"
+}
