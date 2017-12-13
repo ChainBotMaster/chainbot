@@ -19,3 +19,9 @@ and run:
 npm -i
 node bot/bot.js
 ```
+
+## Donation
+```
+Bitcoin: 1Fcb2JAGziHSCdMqcysP1jHoXHdh3ikkMn
+Chaincoin: CL5WSq5M1RRPFDfDbZp6dq2ndV6F93CtkB
+```
