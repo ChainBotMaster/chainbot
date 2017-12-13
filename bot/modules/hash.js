@@ -98,7 +98,7 @@ exports.timedhash = function(bot) {
 
 exports.hash = {
     usage: "**power [Mh/s]**",
-    description: "Displays current Hashrate of Network.\n    Displays potential Earnings For Given Hashrate.\n    This command only can be use in <#" + ChannelID + ">"",
+    description: "Displays current Hashrate of Network.\n    Displays potential Earnings For Given Hashrate.\n    This command only can be use in <#" + ChannelID + ">",
     process: function(bot, msg, suffix) {
         if (!inPrivate(msg) && !ChannelID.includes(msg.channel.id)) {
             let embed = {
