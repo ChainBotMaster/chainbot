@@ -1,0 +1,37 @@
+{  
+    "bot":{  
+        "token":"",
+        "prefix":"!",
+        "debug":false
+    },
+    "chccore":{  
+        "port":,
+        "username":"",
+        "password":""
+    },
+    "moderation":{  
+        "perms":[  
+            "Moderator",
+            "Chainster"
+        ]
+    },
+    "Channels":{  
+        "mining":"376589052444672001",
+        "altcoin":"376583883426365460",
+        "support":"376580497129734154",
+        "spanish":"380141655539318785",
+        "general":"376563578599112705",
+        "chaintipster":"384932211956121600",
+        "masternode":"376580150290284554"
+    },
+    "id":{  
+        "self":"379917668116856833",
+        "other":[  
+            "324631108731928587"
+        ]
+    },
+    "coin":{  
+        "symbol":"",
+        "explorer":""
+    }
+}
