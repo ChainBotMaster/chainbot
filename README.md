@@ -4,62 +4,62 @@
 
 ## Features:
 
-* !balance
+* **!balance**
     * Show your balance
-* !beer
+* **!beer**
     * Beer emoji
-* !bet [amount]
+* **!bet [amount]**
     * Bet an amount of money using a seed.
     * This command only can be used in #chaintipster
-* !cp [coin symbol]
+* **!cp [coin symbol]**
     * Check coin price.
     * This command only can be use in #alt-coins
-* !deposit
+* **!deposit**
     * Get deposit address.
-* !faq
+* **!faq**
     * Frequently Asked Questions
-* !hash power [Mh/s]
+* **!hash power [Mh/s]**
     * Displays current Hashrate of Network
     * Displays potential Earnings For Given Hashrate
-* !info
+* **!info**
     * What is a ChainCoin?
-* !market
+* **!market**
     * See all buy/sell orders.
     * This command only can be use in #alt-coins
-* !masternode
+* **!masternode**
     * What is a Masternode?
-* !megasoak [amount]
+* **!megasoak [amount]**
     * Donate an amount of CHC to the megasoak pot.
     * This command only can be used in #chaintipster
-* !ping
+* **!ping**
     * responds pong, useful for checking if bot is alive
-* !rain [amount]
+* **!rain [amount]**
     * Send a tip to all active members.
     * This command only can be used in #chaintipster
-* !roadmap
+* **!roadmap**
     * Development roadmap
-* !soak [amount]
+* **!soak [amount]**
     * Tip every member who is currently online.
     * This command only can be used in #chaintipster
-* !spanish [subcommand] [tutorial, faq, info, masternode, etc.]
+* **!spanish [subcommand] [tutorial, faq, info, masternode, etc.]**
     * Guías y Tutoriales.
     * Preguntas más frecuentes.
     * ¿Qué esChainCoin - CHC?
     * ¿Qué es un Masternode?
     * etc. soon
     * This command only can be use in #espanol-channel
-* !specs
+* **!specs**
     * ChainCoin specification
-* !tip [amount] [@username] || !tip [@username] [amount]
+* **!tip [amount] [@username] || !tip [@username] [amount]**
     * Send a tip to a member.
-* !tutorial
+* **!tutorial**
     * ChainCoin Tutorials & Guides
-* !vision
+* **!vision**
     * The vision
-* !welcome [@username]
+* **!welcome [@username]**
     * Send welcome message to specified user.
     * This command only can be use in #chainster-chat and people has role as Moderator & Chainster
-* !withdraw [amount] [address] || !withdraw [address] [amount]
+* **!withdraw [amount] [address] || !withdraw [address] [amount]**
     * Withdraw CHC, 0.1 CHC fee for withdrawing.
 
 ## Requirements
