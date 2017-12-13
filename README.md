@@ -29,7 +29,7 @@
 * !masternode
     * What is a Masternode?
 * !megasoak [amount]
-    * Donate an amount of tCHC to the megasoak pot.
+    * Donate an amount of CHC to the megasoak pot.
     * This command only can be used in #chaintipster
 * !ping
     * responds pong, useful for checking if bot is alive
@@ -60,7 +60,7 @@
     * Send welcome message to specified user.
     * This command only can be use in #chainster-chat and people has role as Moderator & Chainster
 * !withdraw [amount] [address] || !withdraw [address] [amount]
-    * Withdraw tCHC, 0.1 CHC fee for withdrawing.
+    * Withdraw CHC, 0.1 CHC fee for withdrawing.
 
 ## Requirements
 
