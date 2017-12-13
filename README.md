@@ -76,7 +76,7 @@ Edit and rename default.json.example in /config, then cd to chainbot directory
 and run:
 
 ```
-npm -i
+npm i
 node bot/bot.js
 ```
 
