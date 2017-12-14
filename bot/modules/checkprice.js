@@ -2,6 +2,7 @@
 let needle = require("needle");
 let config = require("config");
 let ChannelID = config.get("Channels").altcoin;
+let Bot = config.get("bot");
 let inPrivate = require("../helpers.js").inPrivate;
 
 exports.commands = [
@@ -19,8 +20,8 @@ exports.cp = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Oops, Wrong Channel..."
@@ -48,8 +49,8 @@ exports.cp = {
                 embed = {
                     timestamp: new Date(),
                     footer: {
-                        icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                        text: "CHCBot"
+                        icon_url: Bot.iconurl,
+                        text: ""\u00A9 " + Bot.name
                     },
                     color: 1741945,
                     fields: [{
@@ -92,8 +93,8 @@ exports.cp = {
                         embed = {
                             timestamp: new Date(),
                             footer: {
-                                icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                                text: "\u00A9 CHCBot"
+                                icon_url: Bot.iconurl,
+                                text: "\u00A9 " + Bot.name
                             },
                             thumbnail: {
                                 url: thumbnail
@@ -127,8 +128,8 @@ exports.cp = {
                         color: 1741945,
                         timestamp: new Date(),
                         footer: {
-                            icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                            text: "\u00A9 CHCBot"
+                            icon_url: Bot.iconurl,
+                            text: "\u00A9 " + Bot.name
                         },
                         author: {
                             name: "Oops..."
@@ -156,8 +157,8 @@ exports.market = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Oops, Wrong Channel..."
@@ -181,8 +182,8 @@ exports.market = {
                 embed = {
                     timestamp: new Date(),
                     footer: {
-                        icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                        text: "CHCBot"
+                        icon_url: Bot.iconurl,
+                        text: "" + Bot.name
                     },
                     color: 1741945,
                     fields: [{
@@ -219,8 +220,8 @@ exports.market = {
                 embed = {
                     timestamp: new Date(),
                     footer: {
-                        icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                        text: "\u00A9 CHCBot"
+                        icon_url: Bot.iconurl,
+                        text: "\u00A9 " + Bot.name
                     },
                     color: 1741945,
                     fields: [{
