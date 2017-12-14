@@ -1,8 +1,7 @@
 "use strict";
 let config = require("config");
+let Bot = config.get("bot");
 let supportChannel = config.get("Channels").support;
-let miningChannel = config.get("Channels").mining;
-let randomChannel = config.get("Channels").random;
 
 exports.commands = [
     "info",
@@ -23,8 +22,8 @@ exports.info = {
             color: 1741945,
             timestamp: new Date(),
             footer: {
-                icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                text: "\u00A9 CHCBot"
+                icon_url: Bot.iconurl,
+                text: "\u00A9 " + Bot.name
             },
             fields: [{
                     name: "What is a ChainCoin?",
@@ -81,8 +80,8 @@ exports.masternode = {
             color: 1741945,
             timestamp: new Date(),
             footer: {
-                icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                text: "\u00A9 CHCBot"
+                icon_url: Bot.iconurl,
+                text: "\u00A9 " + Bot.name
             },
             fields: [{
                 name: "What is a Masternode?",
@@ -106,8 +105,8 @@ exports.specs = {
             color: 1741945,
             timestamp: new Date(),
             footer: {
-                icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                text: "\u00A9 CHCBot"
+                icon_url: Bot.iconurl,
+                text: "\u00A9 " + Bot.name
             },
             fields: [{
                 name: "Coin specification",
@@ -146,8 +145,8 @@ exports.vision = {
             color: 1741945,
             timestamp: new Date(),
             footer: {
-                icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                text: "\u00A9 CHCBot"
+                icon_url: Bot.iconurl,
+                text: "\u00A9 " + Bot.name
             },
             fields: [{
                     name: "Chaincoin’s Instant Secure Transactions Sending Money Around The World.",
@@ -189,8 +188,8 @@ exports.roadmap = {
             color: 1741945,
             timestamp: new Date(),
             footer: {
-                icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                text: "\u00A9 CHCBot"
+                icon_url: Bot.iconurl,
+                text: "\u00A9 " + Bot.name
             },
             fields: [{
                     name: "Code Base Upgrades (2017 - Done)",
@@ -237,8 +236,8 @@ exports.faq = {
             /*
                        timestamp: new Date(),
                        footer: {
-                           icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                           text: "\u00A9 CHCBot"
+                           icon_url: Bot.iconurl,
+                           text: "\u00A9 " + Bot.name
                        }, */
             fields: [{
                     name: "1. How do I create a master node?",
@@ -290,8 +289,8 @@ exports.faq = {
             color: 1741945,
             timestamp: new Date(),
             footer: {
-                icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                text: "\u00A9 CHCBot"
+                icon_url: Bot.iconurl,
+                text: "\u00A9 " + Bot.name
             },
             fields: [{
                     name: "11. I started my masternode couple of days ago an I still haven't received any rewards is everything ok? What should I do?",
@@ -365,8 +364,8 @@ exports.tutorial = {
             color: 1741945,
             timestamp: new Date(),
             footer: {
-                icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                text: "\u00A9 CHCBot"
+                icon_url: Bot.iconurl,
+                text: "\u00A9 " + Bot.name
             },
             author: {
                 name: "Tutorials & Guides"
@@ -396,135 +395,13 @@ exports.beer = {
             color: 1741945,
             timestamp: new Date(),
             footer: {
-                icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                text: "\u00A9 CHCBot"
+                icon_url: Bot.iconurl,
+                text: "\u00A9 " + Bot.name
             },
             description: "Cheers! :beers:"
         };
         msg.channel.send({
             embed
         });
-    }
-};
-
-exports.github = {
-    usage: " ",
-    description: "ChainCoin Github",
-    process: function(bot, msg) {
-        const embed = {
-            description: "<@" + msg.author.id + ">" + "\n" +
-                "The official github for ChainCoin is [github.com/chaincoin](https://github.com/chaincoin)",
-            color: 1741945,
-            author: {
-                name: "GitHub",
-                url: "https://github.com/chaincoin",
-                icon_url: "https://files.coinmarketcap.com/static/img/coins/32x32/chaincoin.png"
-            }
-        };
-        msg.channel.send({
-            embed
-        });
-    }
-};
-
-// belum lagi
-exports.begging = {
-    usage: " ",
-    description: "Dont Request Free Coins Message",
-    process: function(bot, msg) {
-        const embed = {
-            description: "**Please don't request free coins or invites, we have a strict policy against begging. Further offenses will result in removal from the chat.**",
-            color: 1741945,
-            author: {
-                name: "BEGGING!",
-                icon_url: "https://files.coinmarketcap.com/static/img/coins/32x32/chaincoin.png"
-            }
-        };
-        msg.channel.send({
-            embed
-        });
-    }
-};
-
-exports.beta = {
-    usage: " ",
-    description: "beta message",
-    process: function(bot, msg) {
-        const embed = {
-            description: "<@" + msg.author.id + ">" + "\n" +
-                "Even though ChainCoin is in Open Beta, it's still beta software! There will be bugs and issues to be worked out, thanks for your patience!",
-            color: 1741945,
-            author: {
-                name: "Open Beta",
-                icon_url: "https://files.coinmarketcap.com/static/img/coins/32x32/chaincoin.png"
-            }
-        };
-        msg.channel.send({
-            embed
-        });
-    }
-};
-
-exports.daemondownload = {
-    usage: " ",
-    description: "ChainCoin Daemon Installers",
-    process: function(bot, msg) {
-        const embed = {
-            description: "<@" + msg.author.id + ">" + "\n" +
-                "Installers for the ChainCoin Daemon are available for download [**HERE**](https://github.com/chaincoin/chaincoin/releases) ",
-            color: 1741945,
-            author: {
-                name: "Daemon Download",
-                url: "https://github.com/chaincoin/chaincoin/releases",
-                icon_url: "https://files.coinmarketcap.com/static/img/coins/32x32/chaincoin.png"
-            }
-        };
-        msg.channel.send({
-            embed
-        });
-    }
-};
-
-exports.random = {
-    usage: " ",
-    description: "Off-Topic Message",
-    process: function(bot, msg) {
-        var message =
-            "<@" + msg.author.id + ">" + "\n" +
-            "Please keep conversation on topic, or move random conversations to #" +
-            randomChannel +
-            " if you wish to continue";
-        msg.channel.send(message);
-    }
-};
-
-exports.name = {
-    usage: " ",
-    description: "Change Name Message",
-    process: function(bot, msg) {
-        const embed = {
-            description: "Hey, glad to see you love ChainCoin so much, but for the safety of our users we ask that you avoid using discord names that include the word chaincoin. This is to prevent impersonation and scams.",
-            color: 1741945,
-            author: {
-                name: "ChainCoin Bot",
-                icon_url: "https://files.coinmarketcap.com/static/img/coins/32x32/chaincoin.png"
-            }
-        };
-        msg.channel.send({
-            embed
-        });
-    }
-};
-
-exports.mining = {
-    usage: " ",
-    description: "Mining ChainCoin (CHC)",
-    process: function(bot, msg) {
-        var message =
-            "<@" + msg.author.id + ">" + "\n" +
-            "We have a dedicated channel for mining discussion, feel free to join <#" +
-            miningChannel +
-            ">";
-        msg.channel.send(message);
     }
 };
