@@ -197,7 +197,7 @@ bot.on("ready", async function() {
         author: {
             name: "Join Channels Instruction."
         },
-        description: "Welcome to the Chaincoin Discord! Feel free to customize your experience by selecting the channels you are interested in following. By click the corresponding emoji **below the message** to join that channel and deselecting the emoji will remove you from the channel."
+        description: 'Welcome to the Chaincoin Discord! Please select the channels YOU are interested in following. JOIN by "Clicking On" the corresponding emoji **below the message**. Deselecting the emoji will remove the channel from your view.'
     };
 
     await bot.channels.get(ChannelID)
@@ -215,7 +215,8 @@ bot.on("ready", async function() {
             "**Mining**  <:mining:390878445309132800> \n\n" +
             "**Marketplace **  <:marketplace:390878479492579332> \n\n" +
             "**Chaintipster**  <:chaintipster:390878529295745035> \n\n" +
-            "**Altcoins**  <:altcoins:390878573331742750> "
+            "**Altcoins**  <:altcoins:390878573331742750> \n\n" +
+			"**Memes**  :thinking:"
     };
 
     let msg1 = await bot.channels.get(ChannelID)
@@ -223,6 +224,12 @@ bot.on("ready", async function() {
             embed
         });
 
+	await msg1.react(bot.emojis.get("390878445309132800"));
+	await msg1.react(bot.emojis.get("390878479492579332"));
+	await msg1.react(bot.emojis.get("390878529295745035"));
+	await msg1.react(bot.emojis.get("390878573331742750")); 
+	await msg1.react("ðŸ¤”");
+	
     embed = {
         timestamp: new Date(),
         footer: {
@@ -247,6 +254,17 @@ bot.on("ready", async function() {
             embed
         });
 
+	await msg2.react(bot.emojis.get("390878635437064193"));
+	await msg2.react(bot.emojis.get("390878688935411722"));
+	await msg2.react(bot.emojis.get("390878926379155456"));
+	await msg2.react(bot.emojis.get("390878915222306827"));
+	await msg2.react(bot.emojis.get("390879200724385792"));
+	await msg2.react(bot.emojis.get("390879244038832128"));
+	await msg2.react(bot.emojis.get("390879271796867092"));
+	await msg2.react(bot.emojis.get("390879339975147520"));
+	await msg2.react(bot.emojis.get("390879386389315594"));
+	await msg2.react(bot.emojis.get("390879436083560450"));
+		
     embed = {
         timestamp: new Date(),
         footer: {
@@ -266,6 +284,12 @@ bot.on("ready", async function() {
             embed
         });
 
+	await msg3.react("ðŸ‡¨ðŸ‡³");
+	await msg3.react("ðŸ‡·ðŸ‡º");
+	await msg3.react("ðŸ‡ªðŸ‡¸");
+	await msg3.react("ðŸ‡©ðŸ‡ª");
+	await msg3.react("ðŸ‡«ðŸ‡·");
+	
     joinmsgid1 = msg1.id;
     joinmsgid2 = msg2.id;
     joinmsgid3 = msg3.id;
