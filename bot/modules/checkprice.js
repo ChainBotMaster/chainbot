@@ -50,7 +50,7 @@ exports.cp = {
                     timestamp: new Date(),
                     footer: {
                         icon_url: Bot.iconurl,
-                        text: ""\u00A9 " + Bot.name
+                        text: "\u00A9 " + Bot.name
                     },
                     color: 1741945,
                     fields: [{
