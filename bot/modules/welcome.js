@@ -1,5 +1,6 @@
 "use strict";
 let config = require("config");
+let Bot = config.get("bot");
 let ChannelID = config.get("Channels").general;
 let SupportID = config.get("Channels").support;
 let MasternodeID = config.get("Channels").masternode;
@@ -15,15 +16,15 @@ exports.onUserJoin = function(bot) {
             color: 1741945,
             timestamp: new Date(),
             footer: {
-                icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                text: "\u00A9 CHCBot"
+                icon_url: Bot.iconurl,
+                text: "\u00A9 " + Bot.name
             },
             author: {
                 name: "Welcome to  ChainCoin Discord Community"
             },
             description: 'Welcome to the Chaincoin Community. This is the "Home For Chainsters" from around the world. A place where we come together and collaborate, chat, work, contribute and frankly, cut up and have a great time. ' + "We don't always agree but we do respect diverse views and  work for a greater outcome for all parties involved in ChainCoin and taking this journey with us. Take a few minutes to browse through the channels and see the work happening here. We are always open to new talent joining and contributing your best to the ChainCoin Vision and helping us bring it into reality.   As a new member you can simply enter-->>  **!help**, to get more information and help from our handy CHCBot. Thanks For Dropping By, We Are Glad You Are Here.",
             image: {
-                url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png"
+                url: Bot.iconurl
             }
         };
         member.send({
@@ -47,8 +48,8 @@ exports.welcome = {
                     color: 1741945,
                     timestamp: new Date(),
                     footer: {
-                        icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                        text: "\u00A9 CHCBot"
+                        icon_url: Bot.iconurl,
+                        text: "\u00A9 " + Bot.name
                     },
                     author: {
                         name: "Oops..."
@@ -64,8 +65,8 @@ exports.welcome = {
                     color: 1741945,
                     timestamp: new Date(),
                     footer: {
-                        icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                        text: "\u00A9 CHCBot"
+                        icon_url: Bot.iconurl,
+                        text: "\u00A9 " + Bot.name
                     },
                     author: {
                         name: "Oops, Wrong Channel..."
@@ -84,8 +85,8 @@ exports.welcome = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Oops..."
@@ -102,8 +103,8 @@ exports.welcome = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Oops..."
@@ -119,15 +120,15 @@ exports.welcome = {
             color: 1741945,
             timestamp: new Date(),
             footer: {
-                icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                text: "\u00A9 CHCBot"
+                icon_url: Bot.iconurl,
+                text: "\u00A9 " + Bot.name
             },
             author: {
                 name: "Welcome to the Official ChainCoin Discord."
             },
             description: "<@" + msg.mentions.members.first().id + ">, Welcome to Chaincoin's Discord. You are in our Chainster Chat, Please see <#" + SupportID + "> or <#" + MasternodeID + "> if you need technical support.",
             image: {
-                url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png"
+                url: Bot.iconurl
             }
 
         };
