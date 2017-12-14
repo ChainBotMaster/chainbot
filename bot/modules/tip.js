@@ -78,7 +78,7 @@ exports.log = function(bot) {
             timestamp: new Date(),
             footer: {
                 icon_url: Bot.iconurl,
-                text: "\u00A9 " + Bot.iconurl
+                text: "\u00A9 " + Bot.name
             },
             fields: [{
                     name: "Services fee account",
@@ -116,7 +116,7 @@ exports.deposit = {
                     timestamp: new Date(),
                     footer: {
                         icon_url: Bot.iconurl,
-                        text: "\u00A9 " + Bot.iconurl
+                        text: "\u00A9 " + Bot.name
                     },
                     author: {
                         name: symbol + " deposit address"
@@ -146,7 +146,7 @@ exports.balance = {
                     timestamp: new Date(),
                     footer: {
                         icon_url: Bot.iconurl,
-                        text: "\u00A9 " + Bot.iconurl
+                        text: "\u00A9 " + Bot.name
                     },
                     author: {
                         name: "Balance:"
@@ -175,7 +175,7 @@ exports.withdraw = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Invalid withdraw command..."
@@ -198,7 +198,7 @@ exports.withdraw = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Invalid withdraw amount..."
@@ -226,7 +226,7 @@ exports.withdraw = {
                             timestamp: new Date(),
                             footer: {
                                 icon_url: Bot.iconurl,
-                                text: "\u00A9 " + Bot.iconurl
+                                text: "\u00A9 " + Bot.name
                             },
                             author: {
                                 name: "Withdraw successfully"
@@ -256,7 +256,7 @@ exports.withdraw = {
                     timestamp: new Date(),
                     footer: {
                         icon_url: Bot.iconurl,
-                        text: "\u00A9 " + Bot.iconurl
+                        text: "\u00A9 " + Bot.name
                     },
                     author: {
                         name: "Insufficient funds..."
@@ -282,7 +282,7 @@ exports.tip = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Oops, this command can not use in DM"
@@ -303,7 +303,7 @@ exports.tip = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Invalid tip command..."
@@ -326,7 +326,7 @@ exports.tip = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Invalid tip amount..."
@@ -350,7 +350,7 @@ exports.tip = {
                         timestamp: new Date(),
                         footer: {
                             icon_url: Bot.iconurl,
-                            text: "\u00A9 " + Bot.iconurl
+                            text: "\u00A9 " + Bot.name
                         },
                         author: {
                             name: "Ops..."
@@ -372,7 +372,7 @@ exports.tip = {
                                 timestamp: new Date(),
                                 footer: {
                                     icon_url: Bot.iconurl,
-                                    text: "\u00A9 " + Bot.iconurl
+                                    text: "\u00A9 " + Bot.name
                                 },
                                 author: {
                                     name: "OK, " + msg.author.username + ", your tip has been sent successfully."
@@ -392,7 +392,7 @@ exports.tip = {
                     timestamp: new Date(),
                     footer: {
                         icon_url: Bot.iconurl,
-                        text: "\u00A9 " + Bot.iconurl
+                        text: "\u00A9 " + Bot.name
                     },
                     author: {
                         name: "Insufficient funds..."
@@ -418,7 +418,7 @@ exports.soak = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Oops, this command can not use in DM or in this channel..."
@@ -439,7 +439,7 @@ exports.soak = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Invalid soak command..."
@@ -457,7 +457,7 @@ exports.soak = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Invalid soak amount..."
@@ -480,7 +480,7 @@ exports.soak = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Insufficient funds..."
@@ -535,7 +535,7 @@ exports.soak = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Soak!"
@@ -560,7 +560,7 @@ exports.rain = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Oops, this command can not use in DM or in this channel..."
@@ -582,7 +582,7 @@ exports.rain = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Invalid rain command..."
@@ -601,7 +601,7 @@ exports.rain = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Invalid rain amount..."
@@ -624,7 +624,7 @@ exports.rain = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Insufficient funds..."
@@ -652,7 +652,7 @@ exports.rain = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Rain has fail..."
@@ -690,7 +690,7 @@ exports.rain = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Rain!"
@@ -715,7 +715,7 @@ exports.megasoak = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Oops, this command can not use in DM or in this channel..."
@@ -736,7 +736,7 @@ exports.megasoak = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Invalid megasoak command..."
@@ -754,7 +754,7 @@ exports.megasoak = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Invalid megasoak amount..."
@@ -777,7 +777,7 @@ exports.megasoak = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Insufficient funds..."
@@ -800,7 +800,7 @@ exports.megasoak = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Thanks..."
@@ -858,7 +858,7 @@ exports.megasoak = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Megasoak!"
@@ -883,7 +883,7 @@ exports.bet = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Oops, this command can not use in DM or in this channel..."
@@ -904,7 +904,7 @@ exports.bet = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Invalid bet command..."
@@ -922,7 +922,7 @@ exports.bet = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Invalid bet amount..."
@@ -945,7 +945,7 @@ exports.bet = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Insufficient funds..."
@@ -964,7 +964,7 @@ exports.bet = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Hit maximum and minimum amount of bet..."
@@ -986,7 +986,7 @@ exports.bet = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Congratulations..."
@@ -1004,7 +1004,7 @@ exports.bet = {
                 timestamp: new Date(),
                 footer: {
                     icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.iconurl
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Too bad..."
