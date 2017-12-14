@@ -1,5 +1,6 @@
 "use strict";
 let config = require("config");
+let Bot = config.get("bot");
 let supportChannel = config.get("Channels").support;
 let ChannelID = config.get("Channels").spanish;
 let inPrivate = require("../helpers.js").inPrivate;
@@ -23,8 +24,8 @@ exports.spanish = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Oops, Wrong Channel..."
@@ -58,8 +59,8 @@ exports.spanish = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "¿Qué es un Masternode?"
@@ -79,8 +80,8 @@ exports.spanish = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.name
                 },
                 fields: [{
                         name: "¿Qué esChainCoin - CHC?",
@@ -133,8 +134,8 @@ exports.spanish = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.name
                 },
                 author: {
                     name: "Guías y Tutoriales"
@@ -160,8 +161,8 @@ exports.spanish = {
                 /*
 				timestamp: new Date(),
 				footer: {
-					icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-					text: "\u00A9 CHCBot"
+					icon_url: Bot.iconurl,
+					text: "\u00A9 " + Bot.name
 				}, */
                 fields: [{
                         name: "1. ¿Cómo creo un nodo maestro – MN - MasterNode?",
@@ -213,8 +214,8 @@ exports.spanish = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.name
                 },
                 fields: [{
                         name: "11. Empecé mi nodo maestrohace un par de días y todavía no he recibido ninguna recompensa ¿todo está bien? ¿Que debería hacer?",
