@@ -8,7 +8,8 @@ require('console-stamp')(console, {
 });
 // Load config!
 let config = require("config");
-config = config.get("bot");
+let Bot = config.get("bot");
+let ChannelID = config.get("Channels").joinchannels;
 
 const myCache = new NodeCache({
     stdTTL: 600,
@@ -45,14 +46,229 @@ var commands = {
 };
 
 var bot = new Discord.Client();
+var joinmsgid1 = null;
+var joinmsgid2 = null;
+var joinmsgid3 = null;
 
-bot.on("ready", function() {
+bot.on('messageReactionAdd', async (reaction, user) => {
+
+    if (user.id === bot.user.id)
+        return;
+
+    if (user.bot && user.id !== bot.user.id)
+        return;
+
+    let member = await reaction.message.guild.fetchMember(user);
+    if (reaction.message.id == joinmsgid1) {
+        if (reaction.emoji.id === "390878445309132800") { // Mining
+            member.addRole("390882049587937280");
+        } else if (reaction.emoji.id === "390878479492579332") { // Marketplace
+            member.addRole("390882132064600064");
+        } else if (reaction.emoji.id === "390878529295745035") { // Chaintipster
+            member.addRole("390882206626873384");
+        } else if (reaction.emoji.id === "390878573331742750") { // Altcoins
+            member.addRole("390882258149572617");
+        } else if (reaction.emoji.name === "ðŸ¤”") { // Memes
+            member.addRole("390882335551389697");
+        }
+        return;
+    }
+    if (reaction.message.id == joinmsgid2) {
+        if (reaction.emoji.id === "390878635437064193") { // Github-updates
+            member.addRole("390882439528054785");
+        } else if (reaction.emoji.id === "390878688935411722") { // Development
+            member.addRole("390882465830666240");
+        } else if (reaction.emoji.id === "390878926379155456") { // Pre-proposal-feedback
+            member.addRole("390882566502350848");
+        } else if (reaction.emoji.id === "390878915222306827") { // Code-testing
+            member.addRole("390882512718659585");
+        } else if (reaction.emoji.id === "390879200724385792") { // Whitepaper-collaboration
+            member.addRole("390883013166104587");
+        } else if (reaction.emoji.id === "390879244038832128") { // Marketing
+            member.addRole("390883034712375297");
+        } else if (reaction.emoji.id === "390879271796867092") { // Webdev
+            member.addRole("390883056984129537");
+        } else if (reaction.emoji.id === "390879339975147520") { // Designs
+            member.addRole("390883083987058688");
+        } else if (reaction.emoji.id === "390879386389315594") { // Exchanges
+            member.addRole("390883116392251393");
+        } else if (reaction.emoji.id === "390879436083560450") { // Media
+            member.addRole("390883169165115414");
+        }
+        return;
+    }
+    if (reaction.message.id == joinmsgid3) {
+        if (reaction.emoji.name === "ðŸ‡¨ðŸ‡³") { // China flag
+            member.addRole("390894220350849024"); // Role id
+        } else if (reaction.emoji.name === "ðŸ‡·ðŸ‡º") { // Russia flag
+            member.addRole("390894592410517505");
+        } else if (reaction.emoji.name === "ðŸ‡ªðŸ‡¸") { // Spain flag
+            member.addRole("390894186397696001");
+        } else if (reaction.emoji.name === "ðŸ‡©ðŸ‡ª") { // German flag
+            member.addRole("390894255838593024");
+        } else if (reaction.emoji.name === "ðŸ‡«ðŸ‡·") { // France flag
+            member.addRole("390894611050004490");
+        }
+        return;
+    }
+
+});
+
+bot.on('messageReactionRemove', async (reaction, user) => {
+
+    if (user.id === bot.user.id)
+        return;
+
+    if (user.bot && user.id !== bot.user.id)
+        return;
+
+    let member = await reaction.message.guild.fetchMember(user);
+    if (reaction.message.id == joinmsgid1) {
+        if (reaction.emoji.id === "390878445309132800") { // Mining
+            member.removeRole("390882049587937280");
+        } else if (reaction.emoji.id === "390878479492579332") { // Marketplace
+            member.removeRole("390882132064600064");
+        } else if (reaction.emoji.id === "390878529295745035") { // Chaintipster
+            member.removeRole("390882206626873384");
+        } else if (reaction.emoji.id === "390878573331742750") { // Altcoins
+            member.removeRole("390882258149572617");
+        } else if (reaction.emoji.name === "ðŸ¤”") { // Memes
+            member.removeRole("390882335551389697");
+        }
+        return;
+    }
+    if (reaction.message.id == joinmsgid2) {
+        if (reaction.emoji.id === "390878635437064193") { // Github-updates
+            member.removeRole("390882439528054785");
+        } else if (reaction.emoji.id === "390878688935411722") { // Development
+            member.removeRole("390882465830666240");
+        } else if (reaction.emoji.id === "390878926379155456") { // Pre-proposal-feedback
+            member.removeRole("390882566502350848");
+        } else if (reaction.emoji.id === "390878915222306827") { // Code-testing
+            member.removeRole("390882512718659585");
+        } else if (reaction.emoji.id === "390879200724385792") { // Whitepaper-collaboration
+            member.removeRole("390883013166104587");
+        } else if (reaction.emoji.id === "390879244038832128") { // Marketing
+            member.removeRole("390883034712375297");
+        } else if (reaction.emoji.id === "390879271796867092") { // Webdev
+            member.removeRole("390883056984129537");
+        } else if (reaction.emoji.id === "390879339975147520") { // Designs
+            member.removeRole("390883083987058688");
+        } else if (reaction.emoji.id === "390879386389315594") { // Exchanges
+            member.removeRole("390883116392251393");
+        } else if (reaction.emoji.id === "390879436083560450") { // Media
+            member.removeRole("390883169165115414");
+        }
+        return;
+    }
+    if (reaction.message.id == joinmsgid3) {
+        if (reaction.emoji.name === "ðŸ‡¨ðŸ‡³") { // China flag
+            member.removeRole("390894220350849024"); // Role id
+        } else if (reaction.emoji.name === "ðŸ‡·ðŸ‡º") { // Russia flag
+            member.removeRole("390894592410517505");
+        } else if (reaction.emoji.name === "ðŸ‡ªðŸ‡¸") { // Spain flag
+            member.removeRole("390894186397696001");
+        } else if (reaction.emoji.name === "ðŸ‡©ðŸ‡ª") { // German flag
+            member.removeRole("390894255838593024");
+        } else if (reaction.emoji.name === "ðŸ‡«ðŸ‡·") { // France flag
+            member.removeRole("390894611050004490");
+        }
+        return;
+    }
+});
+
+bot.on("ready", async function() {
     console.log(
         "Logged in! Serving in " + bot.guilds.array().length + " servers"
     );
     require("./plugins.js").init();
-    console.log("type " + config.prefix + "help in Discord for a commands list.");
-    bot.user.setGame(config.prefix + "help");
+    console.log("type " + Bot.prefix + "help in Discord for a commands list.");
+    bot.user.setGame(Bot.prefix + "help");
+
+    let msglist = await bot.channels.get(ChannelID).fetchMessages();
+    bot.channels.get(ChannelID).bulkDelete(msglist);
+
+    let embed = {
+        timestamp: new Date(),
+        footer: {
+            icon_url: Bot.iconurl,
+            text: "\u00A9 " + Bot.name
+        },
+        author: {
+            name: "Join Channels Instruction."
+        },
+        description: "Welcome to the Chaincoin Discord! Feel free to customize your experience by selecting the channels you are interested in following. By click the corresponding emoji **below the message** to join that channel and deselecting the emoji will remove you from the channel."
+    };
+
+    await bot.channels.get(ChannelID)
+        .send({
+            embed
+        });
+
+    embed = {
+        timestamp: new Date(),
+        footer: {
+            icon_url: Bot.iconurl,
+            text: "\u00A9 " + Bot.name
+        },
+        description: "__**[ Chain General & Chat ]**__ \n\n" +
+            "**Mining**  <:mining:390878445309132800> \n\n" +
+            "**Marketplace **  <:marketplace:390878479492579332> \n\n" +
+            "**Chaintipster**  <:chaintipster:390878529295745035> \n\n" +
+            "**Altcoins**  <:altcoins:390878573331742750> "
+    };
+
+    let msg1 = await bot.channels.get(ChannelID)
+        .send({
+            embed
+        });
+
+    embed = {
+        timestamp: new Date(),
+        footer: {
+            icon_url: Bot.iconurl,
+            text: "\u00A9 " + Bot.name
+        },
+        description: "__**[ Chain Development ]**__ \n\n" +
+            "**Github-updates**  <:github:390878635437064193> \n\n" +
+            "**Development**  <:dev:390878688935411722> \n\n" +
+            "**Pre-proposal-feedback**  <:feedback:390878926379155456> \n\n" +
+            "**Code-testing**  <:codetest:390878915222306827> \n\n" +
+            "**Whitepaper-collaboration**  <:whitepaper:390879200724385792> \n\n" +
+            "**Marketing**  <:marketing:390879244038832128> \n\n" +
+            "**Webdev**  <:webdev:390879271796867092> \n\n" +
+            "**Designs**  <:design:390879339975147520> \n\n" +
+            "**Exchanges**  <:exchanges:390879386389315594> \n\n" +
+            "**Media**  <:media:390879436083560450> "
+    };
+
+    let msg2 = await bot.channels.get(ChannelID)
+        .send({
+            embed
+        });
+
+    embed = {
+        timestamp: new Date(),
+        footer: {
+            icon_url: Bot.iconurl,
+            text: "\u00A9 " + Bot.name
+        },
+        description: "__**[ Chain International ]**__ \n\n" +
+            "**Espanol**  :flag_es: \n\n" +
+            "**Chinese**  :flag_cn: \n\n" +
+            "**German**  :flag_de: \n\n" +
+            "**Russian**  :flag_rs: \n\n" +
+            "**French**  :flag_fr: "
+    };
+
+    let msg3 = await bot.channels.get(ChannelID)
+        .send({
+            embed
+        });
+
+    joinmsgid1 = msg1.id;
+    joinmsgid2 = msg2.id;
+    joinmsgid3 = msg3.id;
 });
 
 bot.on("disconnected", function() {
@@ -64,7 +280,7 @@ bot.on("disconnected", function() {
 function checkMessageForCommand(msg, isEdit) {
     myCache.set(msg.author.id);
     //check if message is a command
-    if (msg.author.id != bot.user.id && msg.content.startsWith(config.prefix)) {
+    if (msg.author.id != bot.user.id && msg.content.startsWith(Bot.prefix)) {
         console.log(
             "treating " +
             msg.content +
@@ -74,16 +290,17 @@ function checkMessageForCommand(msg, isEdit) {
             msg.author.username +
             " as command"
         );
-        var cmdTxt = msg.content.split(" ")[0].substring(config.prefix.length).toLowerCase();
+        var cmdTxt = msg.content.split(" ")[0].substring(Bot.prefix.length).toLowerCase();
         var suffix = msg.content.substring(
-            cmdTxt.length + config.prefix.length + 1
+            cmdTxt.length + Bot.prefix.length + 1
         ).toLowerCase();
-        /*add one for the ! and one for the space
-           if (msg.isMentioned(bot.user)) {
+        //-- break
+        //add one for the ! and one for the space
+        /*   if (msg.isMentioned(bot.user)) {
              try {
                cmdTxt = msg.content.split(" ")[1];
                suffix = msg.content.substring(
-                 bot.user.mention().length + cmdTxt.length + config.prefix.length + 1
+                 bot.user.mention().length + cmdTxt.length + Bot.prefix.length + 1
                );
              } catch (e) {
                //no command
@@ -106,7 +323,7 @@ function checkMessageForCommand(msg, isEdit) {
                 var info = "";
                 for (var i = 0; i < cmds.length; i++) {
                     var cmd = cmds[i];
-                    info += "**" + config.prefix + cmd + "**";
+                    info += "**" + Bot.prefix + cmd + "**";
                     var usage = commands[cmd].usage;
                     if (usage) {
                         info += " " + usage;
@@ -127,7 +344,7 @@ function checkMessageForCommand(msg, isEdit) {
                     var sortedCommands = Object.keys(commands).sort();
                     for (var i in sortedCommands) {
                         var cmd = sortedCommands[i];
-                        var info = "**" + config.prefix + cmd + "**";
+                        var info = "**" + Bot.prefix + cmd + "**";
                         var usage = commands[cmd].usage;
                         if (usage) {
                             info += " " + usage;
@@ -159,7 +376,7 @@ function checkMessageForCommand(msg, isEdit) {
                 cmd.process(bot, msg, suffix, isEdit, myCache);
             } catch (e) {
                 var msgTxt = "command " + cmdTxt + " failed :(";
-                if (config.debug) {
+                if (Bot.debug) {
                     msgTxt += "\n" + e.stack;
                 }
                 msg.channel.send(msgTxt);
@@ -184,7 +401,7 @@ function checkMessageForCommand(msg, isEdit) {
                 for (var i in sortedCommands) {
                     //console.log(sortedCommands[i]);
                     var cmd = sortedCommands[i];
-                    var info = "**" + config.prefix + cmd + "**";
+                    var info = "**" + Bot.prefix + cmd + "**";
                     var usage = commands[cmd].usage;
                     if (usage) {
                         info += " " + usage;
@@ -236,4 +453,4 @@ exports.commandCount = function() {
     return Object.keys(commands).length;
 };
 
-bot.login(config.token);
+bot.login(Bot.token);
