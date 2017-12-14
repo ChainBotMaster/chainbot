@@ -2,6 +2,7 @@
 
 const Client = require("bitcoin-core");
 const config = require("config");
+let Bot = config.get("bot");
 const id = config.get("id");
 const chcconfig = config.get("chccore");
 const chc = new Client(chcconfig);
@@ -76,8 +77,8 @@ exports.log = function(bot) {
             color: 1741945,
             timestamp: new Date(),
             footer: {
-                icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                text: "\u00A9 CHCBot"
+                icon_url: Bot.iconurl,
+                text: "\u00A9 " + Bot.iconurl
             },
             fields: [{
                     name: "Services fee account",
@@ -114,8 +115,8 @@ exports.deposit = {
                     color: 1741945,
                     timestamp: new Date(),
                     footer: {
-                        icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                        text: "\u00A9 CHCBot"
+                        icon_url: Bot.iconurl,
+                        text: "\u00A9 " + Bot.iconurl
                     },
                     author: {
                         name: symbol + " deposit address"
@@ -144,8 +145,8 @@ exports.balance = {
                     color: 1741945,
                     timestamp: new Date(),
                     footer: {
-                        icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                        text: "\u00A9 CHCBot"
+                        icon_url: Bot.iconurl,
+                        text: "\u00A9 " + Bot.iconurl
                     },
                     author: {
                         name: "Balance:"
@@ -173,8 +174,8 @@ exports.withdraw = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Invalid withdraw command..."
@@ -196,8 +197,8 @@ exports.withdraw = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Invalid withdraw amount..."
@@ -224,8 +225,8 @@ exports.withdraw = {
                             color: 1741945,
                             timestamp: new Date(),
                             footer: {
-                                icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                                text: "\u00A9 CHCBot"
+                                icon_url: Bot.iconurl,
+                                text: "\u00A9 " + Bot.iconurl
                             },
                             author: {
                                 name: "Withdraw successfully"
@@ -254,8 +255,8 @@ exports.withdraw = {
                     color: 1741945,
                     timestamp: new Date(),
                     footer: {
-                        icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                        text: "\u00A9 CHCBot"
+                        icon_url: Bot.iconurl,
+                        text: "\u00A9 " + Bot.iconurl
                     },
                     author: {
                         name: "Insufficient funds..."
@@ -280,8 +281,8 @@ exports.tip = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Oops, this command can not use in DM"
@@ -301,8 +302,8 @@ exports.tip = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Invalid tip command..."
@@ -324,8 +325,8 @@ exports.tip = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Invalid tip amount..."
@@ -348,8 +349,8 @@ exports.tip = {
                         color: 1741945,
                         timestamp: new Date(),
                         footer: {
-                            icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                            text: "\u00A9 CHCBot"
+                            icon_url: Bot.iconurl,
+                            text: "\u00A9 " + Bot.iconurl
                         },
                         author: {
                             name: "Ops..."
@@ -370,8 +371,8 @@ exports.tip = {
                                 color: 1741945,
                                 timestamp: new Date(),
                                 footer: {
-                                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                                    text: "\u00A9 CHCBot"
+                                    icon_url: Bot.iconurl,
+                                    text: "\u00A9 " + Bot.iconurl
                                 },
                                 author: {
                                     name: "OK, " + msg.author.username + ", your tip has been sent successfully."
@@ -390,8 +391,8 @@ exports.tip = {
                     color: 1741945,
                     timestamp: new Date(),
                     footer: {
-                        icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                        text: "\u00A9 CHCBot"
+                        icon_url: Bot.iconurl,
+                        text: "\u00A9 " + Bot.iconurl
                     },
                     author: {
                         name: "Insufficient funds..."
@@ -416,8 +417,8 @@ exports.soak = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Oops, this command can not use in DM or in this channel..."
@@ -437,8 +438,8 @@ exports.soak = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Invalid soak command..."
@@ -455,8 +456,8 @@ exports.soak = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Invalid soak amount..."
@@ -478,8 +479,8 @@ exports.soak = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Insufficient funds..."
@@ -533,8 +534,8 @@ exports.soak = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Soak!"
@@ -558,8 +559,8 @@ exports.rain = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Oops, this command can not use in DM or in this channel..."
@@ -580,8 +581,8 @@ exports.rain = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Invalid rain command..."
@@ -599,8 +600,8 @@ exports.rain = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Invalid rain amount..."
@@ -622,8 +623,8 @@ exports.rain = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Insufficient funds..."
@@ -650,8 +651,8 @@ exports.rain = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Rain has fail..."
@@ -688,8 +689,8 @@ exports.rain = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Rain!"
@@ -713,8 +714,8 @@ exports.megasoak = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Oops, this command can not use in DM or in this channel..."
@@ -734,8 +735,8 @@ exports.megasoak = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Invalid megasoak command..."
@@ -752,8 +753,8 @@ exports.megasoak = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Invalid megasoak amount..."
@@ -775,8 +776,8 @@ exports.megasoak = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Insufficient funds..."
@@ -798,8 +799,8 @@ exports.megasoak = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Thanks..."
@@ -856,8 +857,8 @@ exports.megasoak = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Megasoak!"
@@ -881,8 +882,8 @@ exports.bet = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Oops, this command can not use in DM or in this channel..."
@@ -902,8 +903,8 @@ exports.bet = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Invalid bet command..."
@@ -920,8 +921,8 @@ exports.bet = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Invalid bet amount..."
@@ -943,8 +944,8 @@ exports.bet = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Insufficient funds..."
@@ -962,8 +963,8 @@ exports.bet = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Hit maximum and minimum amount of bet..."
@@ -984,8 +985,8 @@ exports.bet = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Congratulations..."
@@ -1002,8 +1003,8 @@ exports.bet = {
                 color: 1741945,
                 timestamp: new Date(),
                 footer: {
-                    icon_url: "https://www.chaincoin.org/wp-content/uploads/2017/11/chaincoin.png",
-                    text: "\u00A9 CHCBot"
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.iconurl
                 },
                 author: {
                     name: "Too bad..."
