@@ -16,7 +16,7 @@ exports.custom = [
 exports.timedhash = function(bot) {
     setInterval(function() {
         sendMiningInfo(bot);
-    }, 8 * 60 * 60 * 1000); //6 * 60 * 60 * 1000
+    }, 12 * 60 * 60 * 1000); //24 * 60 * 60 * 1000
 
     function sendMiningInfo(bot) {
         let embed;
