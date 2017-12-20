@@ -4,10 +4,17 @@ let Bot = config.get("bot");
 let ChannelID = config.get("Channels").general;
 let SupportID = config.get("Channels").support;
 let MasternodeID = config.get("Channels").masternode;
+let JoinID = config.get("Channels").joinchannels;
 let hasPerms = require("../helpers.js").hasPerms;
 let inPrivate = require("../helpers.js").inPrivate;
 exports.custom = [
     "onUserJoin"
+];
+
+
+exports.commands = [
+    "welcome",
+	"join"
 ];
 
 exports.onUserJoin = function(bot) {
@@ -32,10 +39,6 @@ exports.onUserJoin = function(bot) {
         });
     });
 };
-
-exports.commands = [
-    "welcome"
-];
 
 exports.welcome = {
     usage: "**[@username]**",
@@ -129,6 +132,30 @@ exports.welcome = {
             description: "<@" + msg.mentions.members.first().id + ">, Welcome to Chaincoin's Discord. You are in our Chainster Chat, Please see <#" + SupportID + "> or <#" + MasternodeID + "> if you need technical support.",
             image: {
                 url: Bot.iconurl
+            }
+
+        };
+        msg.channel.send({
+            embed
+        });
+        return;
+    }
+};
+
+exports.join = {
+    usage: "",
+    description: "Send join channel message",
+    process: function(bot, msg, suffix) {
+        const embed = {
+            color: 1741945,
+            timestamp: new Date(),
+            footer: {
+                icon_url: Bot.iconurl,
+                text: "\u00A9 " + Bot.name
+            },
+            description: "You Can Join EVEN MORE Channels in <#" + JoinID + ">",
+            image: {
+                url: "https://raw.githubusercontent.com/ChainBotMaster/chainbot/master/bot/image/chcjoinchannel-01.png"
             }
 
         };
