@@ -7,7 +7,8 @@ let inPrivate = require("../helpers.js").inPrivate;
 
 exports.commands = [
     "cp",
-    "market"
+    "market",
+    "price"
 ];
 
 exports.cp = {
@@ -140,6 +141,120 @@ exports.cp = {
                         embed
                     });
                     return;
+                }
+                return;
+            }
+        });
+    }
+};
+
+exports.price = {
+    usage: "",
+    description: "Check Chaincoin price.\n    This command only can be use in <#" + ChannelID + ">",
+    process: function(bot, msg, suffix) {
+        let embed;
+        if (!inPrivate(msg) && !ChannelID.includes(msg.channel.id)) {
+            embed = {
+                color: 1741945,
+                timestamp: new Date(),
+                footer: {
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.name
+                },
+                author: {
+                    name: "Oops, Wrong Channel..."
+                },
+                description: "Please use <#" + ChannelID + "> or DMs bot."
+            };
+            msg.channel.send({
+                embed
+            });
+            return;
+        }
+
+        let symbol = "chc";
+        let author = "";
+        let price = "";
+        let data = "";
+        let price_change = "";
+        let thumbnail = "";
+
+        let url = "https://api.coinmarketcap.com/v1/ticker/?limit=10000";
+        needle.get(url, function(error, response) {
+            if (error || response.statusCode !== 200) {
+                embed = {
+                    timestamp: new Date(),
+                    footer: {
+                        icon_url: Bot.iconurl,
+                        text: "\u00A9 " + Bot.name
+                    },
+                    color: 1741945,
+                    fields: [{
+                        name: "Oops,",
+                        value: "Coinmarketcap API is not available."
+                    }]
+                };
+
+                msg.channel.send({
+                    embed
+                });
+            } else {
+                for (var x = 0; x < response.body.length; x++) {
+                    var myObj = response.body[x];
+                    if (myObj.symbol.toUpperCase() === symbol.toUpperCase()) {
+                        var arr = Object.keys(myObj).map(function(key) {
+                            return myObj[key];
+                        });
+                        //console.log(parseFloat(myObj.market_cap_usd.toString()).toFixed(2).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+                        /*for(var tt = 0; tt < arr.length; tt++){
+                        	console.log(tt + "  "+ arr[tt]);
+                        }*/
+                        author = myObj.name + " (" + myObj.symbol + ")";
+                        price = myObj.price_btc + " Bitcoin (BTC)\n" + myObj.price_usd + " US Dollar";
+
+                        if (myObj.market_cap_usd != null) {
+                            myObj.market_cap_usd = parseFloat(myObj.market_cap_usd.toString()).toFixed(2).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                        }
+
+                        if (arr[6] != null) {
+                            arr[6] = parseFloat(arr[6].toString()).toFixed(2).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                        }
+
+                        data = "Rank: " + myObj.rank + " \nMarket Cap : $ " + myObj.market_cap_usd + " \nCirculating Units: " + myObj.available_supply + " \nTrading Volume: $ " + arr[6];
+                        price_change = "1 Hour:  " + myObj.percent_change_1h + " \n1 Day:    " + myObj.percent_change_24h + " \n1 Week: " + myObj.percent_change_7d;
+                        thumbnail = "https://files.coinmarketcap.com/static/img/coins/200x200/" + myObj.id + ".png";
+
+                        embed = {
+                            timestamp: new Date(),
+                            footer: {
+                                icon_url: Bot.iconurl,
+                                text: "\u00A9 " + Bot.name
+                            },
+                            thumbnail: {
+                                url: thumbnail
+                            },
+                            color: 1741945,
+                            author: {
+                                name: author
+                            },
+                            fields: [{
+                                name: "Price",
+                                value: price
+                            }, {
+                                name: "Data",
+                                value: data,
+                                inline: true
+                            }, {
+                                name: "Price change",
+                                value: price_change,
+                                inline: true
+                            }]
+                        };
+
+                        msg.channel.send({
+                            embed
+                        });
+                    }
                 }
                 return;
             }
