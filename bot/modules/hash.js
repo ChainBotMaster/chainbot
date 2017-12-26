@@ -55,8 +55,7 @@ exports.timedhash = function(bot) {
                                 value: "Hashrate: " + numberWithCommas(hashrate) + " hash/seconds\n" +
                                     "Difficulty: " + numberWithCommas(difficulty.toFixed(0)) + "\n" +
                                     "Current Block: " + numberWithCommas(height.toFixed(0)) + "\n" +
-                                    "Mining Block Reward: 4.4 CHC \n" +
-                                    "Masternode Block Reward: 3.6 CHC"
+                                    "Mining Block Reward: 4.4 CHC "
                             }]
                         };
                         bot.channels.get(ChannelID).send({
@@ -157,8 +156,7 @@ exports.hash = {
                                     value: "Hashrate: " + numberWithCommas(hashrate) + " hash/seconds\n" +
                                         "Difficulty: " + numberWithCommas(difficulty.toFixed(0)) + "\n" +
                                         "Current Block: " + numberWithCommas(height.toFixed(0)) + "\n" +
-                                        "Mining Block Reward: 4.4 CHC \n" +
-                                        "Masternode Block Reward: 3.6 CHC"
+                                        "Mining Block Reward: 4.4 CHC "
                                 }]
                             };
                             msg.channel.send({
