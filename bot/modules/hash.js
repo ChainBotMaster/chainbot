@@ -16,7 +16,7 @@ exports.custom = [
 exports.timedhash = function(bot) {
     setInterval(function() {
         sendMiningInfo(bot);
-    }, 12 * 60 * 60 * 1000); //24 * 60 * 60 * 1000
+    }, 24 * 60 * 60 * 1000); //24 * 60 * 60 * 1000
 
     function sendMiningInfo(bot) {
         let embed;
@@ -43,49 +43,26 @@ exports.timedhash = function(bot) {
                     let hashrate = Number(response.body);
                     needle.get("http://104.238.153.140:3001/api/getdifficulty", function(error, response) {
                         let difficulty = Number(response.body);
-                        needle.get("https://chc.suprnova.cc/index.php?page=api&action=getpoolstatus&api_key=cd856b384f20681b62bdd079ff67dabfc9190e9153b2690bfa541d61d25d51ad", function(error, response) {
-                            if (error || response.statusCode !== 200) {
-                                embed = {
-                                    color: 1741945,
-                                    timestamp: new Date(),
-                                    footer: {
-                                        icon_url: Bot.iconurl,
-                                        text: "\u00A9 " + Bot.name
-                                    },
-                                    fields: [{
-                                        name: "Oops,",
-                                        value: "Suprnova API is not available"
-                                    }]
-                                };
-                                bot.channels.get(ChannelID).send({
-                                    embed
-                                });
-                            } else {
-                                let obj = JSON.parse(response.body);
-                                let block_time = Number(obj.getpoolstatus.data.timesincelast);
-                                embed = {
-                                    color: 1741945,
-                                    timestamp: new Date(),
-                                    footer: {
-                                        icon_url: Bot.iconurl,
-                                        text: "\u00A9 " + Bot.name
-                                    },
-                                    fields: [{
-                                        name: "CHC Network Stats",
-                                        value: "Hashrate: " + numberWithCommas(hashrate) + " hash/seconds\n" +
-                                            "Difficulty: " + numberWithCommas(difficulty.toFixed(0)) + "\n" +
-                                            "Current Block: " + numberWithCommas(height.toFixed(0)) + "\n" +
-                                            "Last Block Found: " + numberWithCommas(block_time.toFixed(0)) + " seconds ago\n" +
-                                            "Mining Block Reward: 4.4 CHC \n" +
-                                            "Masternode Block Reward: 3.6 CHC"
-                                    }]
-                                };
-                                bot.channels.get(ChannelID).send({
-                                    embed
-                                });
-                                return;
-                            }
+                        embed = {
+                            color: 1741945,
+                            timestamp: new Date(),
+                            footer: {
+                                icon_url: Bot.iconurl,
+                                text: "\u00A9 " + Bot.name
+                            },
+                            fields: [{
+                                name: "CHC Network Stats",
+                                value: "Hashrate: " + numberWithCommas(hashrate) + " hash/seconds\n" +
+                                    "Difficulty: " + numberWithCommas(difficulty.toFixed(0)) + "\n" +
+                                    "Current Block: " + numberWithCommas(height.toFixed(0)) + "\n" +
+                                    "Mining Block Reward: 4.4 CHC \n" +
+                                    "Masternode Block Reward: 3.6 CHC"
+                            }]
+                        };
+                        bot.channels.get(ChannelID).send({
+                            embed
                         });
+                        return;
                     });
                 });
             }
@@ -168,49 +145,26 @@ exports.hash = {
                         let hashrate = Number(response.body);
                         needle.get("http://104.238.153.140:3001/api/getdifficulty", function(error, response) {
                             let difficulty = Number(response.body);
-                            needle.get("https://chc.suprnova.cc/index.php?page=api&action=getpoolstatus&api_key=cd856b384f20681b62bdd079ff67dabfc9190e9153b2690bfa541d61d25d51ad", function(error, response) {
-                                if (error || response.statusCode !== 200) {
-                                    embed = {
-                                        color: 1741945,
-                                        timestamp: new Date(),
-                                        footer: {
-                                            icon_url: Bot.iconurl,
-                                            text: "\u00A9 " + Bot.name
-                                        },
-                                        fields: [{
-                                            name: "Oops,",
-                                            value: "Suprnova API is not available"
-                                        }]
-                                    };
-                                    msg.channel.send({
-                                        embed
-                                    });
-                                } else {
-                                    let obj = JSON.parse(response.body);
-                                    let block_time = Number(obj.getpoolstatus.data.timesincelast);
-                                    embed = {
-                                        color: 1741945,
-                                        timestamp: new Date(),
-                                        footer: {
-                                            icon_url: Bot.iconurl,
-                                            text: "\u00A9 " + Bot.name
-                                        },
-                                        fields: [{
-                                            name: "CHC Network Stats",
-                                            value: "Hashrate: " + numberWithCommas(hashrate) + " hash/seconds\n" +
-                                                "Difficulty: " + numberWithCommas(difficulty.toFixed(0)) + "\n" +
-                                                "Current Block: " + numberWithCommas(height.toFixed(0)) + "\n" +
-                                                "Last Block Found: " + numberWithCommas(block_time.toFixed(0)) + " seconds ago\n" +
-                                                "Mining Block Reward: 4.4 CHC \n" +
-                                                "Masternode Block Reward: 3.6 CHC"
-                                        }]
-                                    };
-                                    msg.channel.send({
-                                        embed
-                                    });
-                                    return;
-                                }
+                            embed = {
+                                color: 1741945,
+                                timestamp: new Date(),
+                                footer: {
+                                    icon_url: Bot.iconurl,
+                                    text: "\u00A9 " + Bot.name
+                                },
+                                fields: [{
+                                    name: "CHC Network Stats",
+                                    value: "Hashrate: " + numberWithCommas(hashrate) + " hash/seconds\n" +
+                                        "Difficulty: " + numberWithCommas(difficulty.toFixed(0)) + "\n" +
+                                        "Current Block: " + numberWithCommas(height.toFixed(0)) + "\n" +
+                                        "Mining Block Reward: 4.4 CHC \n" +
+                                        "Masternode Block Reward: 3.6 CHC"
+                                }]
+                            };
+                            msg.channel.send({
+                                embed
                             });
+                            return;
                         });
                     });
                 }
