@@ -25,7 +25,7 @@ exports.cp = {
                     text: "\u00A9 " + Bot.name
                 },
                 author: {
-                    name: "Oops, Wrong Channel..."
+                    name: "Woops, Wrong Channel..."
                 },
                 description: "Please use <#" + ChannelID + "> or DMs bot."
             };
@@ -55,7 +55,7 @@ exports.cp = {
                     },
                     color: 1741945,
                     fields: [{
-                        name: "Oops,",
+                        name: "Woops,",
                         value: "Coinmarketcap API is not available."
                     }]
                 };
@@ -133,7 +133,7 @@ exports.cp = {
                             text: "\u00A9 " + Bot.name
                         },
                         author: {
-                            name: "Oops..."
+                            name: "Woops..."
                         },
                         description: "Coin not found!"
                     };
@@ -150,28 +150,9 @@ exports.cp = {
 
 exports.price = {
     usage: "",
-    description: "Check Chaincoin price.\n    This command only can be use in <#" + ChannelID + ">",
+    description: "Check Chaincoin price.",
     process: function(bot, msg, suffix) {
         let embed;
-        if (!inPrivate(msg) && !ChannelID.includes(msg.channel.id)) {
-            embed = {
-                color: 1741945,
-                timestamp: new Date(),
-                footer: {
-                    icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.name
-                },
-                author: {
-                    name: "Oops, Wrong Channel..."
-                },
-                description: "Please use <#" + ChannelID + "> or DMs bot."
-            };
-            msg.channel.send({
-                embed
-            });
-            return;
-        }
-
         let symbol = "chc";
         let author = "";
         let price = "";
@@ -190,7 +171,7 @@ exports.price = {
                     },
                     color: 1741945,
                     fields: [{
-                        name: "Oops,",
+                        name: "Woops,",
                         value: "Coinmarketcap API is not available."
                     }]
                 };
@@ -276,7 +257,7 @@ exports.market = {
                     text: "\u00A9 " + Bot.name
                 },
                 author: {
-                    name: "Oops, Wrong Channel..."
+                    name: "Woops, Wrong Channel..."
                 },
                 description: "Please use <#" + ChannelID + "> or DMs bot."
             };
@@ -302,7 +283,7 @@ exports.market = {
                     },
                     color: 1741945,
                     fields: [{
-                        name: "Oops,",
+                        name: "Woops,",
                         value: "Cryptopia API is not available."
                     }]
                 };
