@@ -55,7 +55,7 @@ exports.welcome = {
                         text: "\u00A9 " + Bot.name
                     },
                     author: {
-                        name: "Oops..."
+                        name: "Woops..."
                     },
                     description: "Command cannot be used in a DM.\nPlease use <#" + ChannelID + ">."
                 };
@@ -72,7 +72,7 @@ exports.welcome = {
                         text: "\u00A9 " + Bot.name
                     },
                     author: {
-                        name: "Oops, Wrong Channel..."
+                        name: "Woops, Wrong Channel..."
                     },
                     description: "Please use <#" + ChannelID + ">."
                 };
@@ -92,7 +92,7 @@ exports.welcome = {
                     text: "\u00A9 " + Bot.name
                 },
                 author: {
-                    name: "Oops..."
+                    name: "Woops..."
                 },
                 description: "No user defined."
             };
@@ -110,7 +110,7 @@ exports.welcome = {
                     text: "\u00A9 " + Bot.name
                 },
                 author: {
-                    name: "Oops..."
+                    name: "Woops..."
                 },
                 description: "You Don't Have Permission To Use This Command!"
             };
