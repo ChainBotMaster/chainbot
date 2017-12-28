@@ -102,9 +102,9 @@ exports.specs = {
     usage: " ",
     description: "ChainCoin specification",
     process: function(bot, msg) {
-        needle.get("http://http://104.238.153.140:3001/ext/getbalance/CGTta3M4t3yXu8uRgkKvaWd2d8DQvDPnpL", function(error, response) {
+        needle.get("http://104.238.153.140:3001/ext/getbalance/CGTta3M4t3yXu8uRgkKvaWd2d8DQvDPnpL", function(error, response) {
             if (error || response.statusCode !== 200) {
-
+			
             } else {
                 let balance = Number(response.body);
                 const embed = {
