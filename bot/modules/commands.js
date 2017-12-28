@@ -1,5 +1,6 @@
 "use strict";
 let config = require("config");
+let needle = require("needle");
 let Bot = config.get("bot");
 let supportChannel = config.get("Channels").support;
 
