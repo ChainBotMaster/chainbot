@@ -35,7 +35,6 @@
     * responds pong, useful for checking if bot is alive
 * **!price**
     * Check Chaincoin price.
-    * This command only can be use in #alt-coins
 * **!rain [amount]**
     * Send a tip to all active members.
     * This command only can be used in #chaintipster
