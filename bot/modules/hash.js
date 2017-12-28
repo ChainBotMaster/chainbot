@@ -30,7 +30,7 @@ exports.timedhash = function(bot) {
                         text: "\u00A9 " + Bot.name
                     },
                     fields: [{
-                        name: "Oops,",
+                        name: "Woops,",
                         value: "Explorer API is not available."
                     }]
                 };
@@ -86,7 +86,7 @@ exports.hash = {
                     text: "\u00A9 " + Bot.name
                 },
                 author: {
-                    name: "Oops, Wrong Channel..."
+                    name: "Woops, Wrong Channel..."
                 },
                 description: "Please use <#" + ChannelID + "> or DMs bot."
             };
@@ -131,7 +131,7 @@ exports.hash = {
                             text: "\u00A9 " + Bot.name
                         },
                         fields: [{
-                            name: "Oops,",
+                            name: "Woops,",
                             value: "Explorer API is not available."
                         }]
                     };
@@ -181,7 +181,7 @@ exports.hash = {
                             text: "\u00A9 " + Bot.name
                         },
                         fields: [{
-                            name: "Oops,",
+                            name: "Woops,",
                             value: "Explorer API is not available."
                         }]
                     };
