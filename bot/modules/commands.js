@@ -101,38 +101,46 @@ exports.specs = {
     usage: " ",
     description: "ChainCoin specification",
     process: function(bot, msg) {
-        const embed = {
-            color: 1741945,
-            timestamp: new Date(),
-            footer: {
-                icon_url: Bot.iconurl,
-                text: "\u00A9 " + Bot.name
-            },
-            fields: [{
-                name: "Coin specification",
-                value: "Name: ChainCoin" + "\n" +
-                    "Symbol: CHC" + "\n" +
-                    "Pre-mine: No" + "\n" +
-                    "CPU mining: Yes" + "\n" +
-                    "GPU mining: Yes" + "\n" +
-                    "ASIC mining: No" + "\n" +
-                    "Algorithm: 11 hashing algorithms chained (C11)" + "\n" +
-                    "Total reward: 16 coins per block (currently 8 per block)" + "\n" +
-                    "Miner reward: 3.6 coin per block" + "\n" +
-                    "Masternode reward: 3.6 coin per block" + "\n" +
-                    "Development fund: 0.8 coin per block" + "\n" +
-                    "Halving: Every 700800 blocks (2 years)" + "\n" +
-                    "Block time: 90 seconds" + "\n" +
-                    "**Total coins**: About **23 million**" + "\n" +
-                    "Burning address: [CGTta3M4t3yXu8uRgkKvaWd2d8DQvDPnpL](http://104.238.153.140:3001/address/CGTta3M4t3yXu8uRgkKvaWd2d8DQvDPnpL)" + "\n" +
-                    "Burning amount: 2029697.59569225 (as 16 Nov 2017)" + "\n" +
-                    "P2P Port: 11994" + "\n" +
-                    "RPC Port 11995" + "\n" +
-                    "[**View block explorer**](http://104.238.153.140:3001/)"
-            }]
-        };
-        msg.channel.send({
-            embed
+        needle.get("http://http://104.238.153.140:3001/ext/getbalance/CGTta3M4t3yXu8uRgkKvaWd2d8DQvDPnpL", function(error, response) {
+            if (error || response.statusCode !== 200) {
+
+            } else {
+                let balance = Number(response.body);
+                const embed = {
+                    color: 1741945,
+                    timestamp: new Date(),
+                    footer: {
+                        icon_url: Bot.iconurl,
+                        text: "\u00A9 " + Bot.name
+                    },
+                    fields: [{
+                        name: "Coin specification",
+                        value: "Name: ChainCoin" + "\n" +
+                            "Symbol: CHC" + "\n" +
+                            "Pre-mine: No" + "\n" +
+                            "CPU mining: Yes" + "\n" +
+                            "GPU mining: Yes" + "\n" +
+                            "ASIC mining: No" + "\n" +
+                            "Algorithm: 11 hashing algorithms chained (C11)" + "\n" +
+                            "Total reward: 16 coins per block (currently 8 per block)" + "\n" +
+                            "Miner reward: 3.6 coin per block" + "\n" +
+                            "Masternode reward: 3.6 coin per block" + "\n" +
+                            "Development fund: 0.8 coin per block" + "\n" +
+                            "Halving: Every 700800 blocks (2 years)" + "\n" +
+                            "Block time: 90 seconds" + "\n" +
+                            "**Total coins**: About **23 million**" + "\n" +
+                            "Burning address: [CGTta3M4t3yXu8uRgkKvaWd2d8DQvDPnpL](http://104.238.153.140:3001/address/CGTta3M4t3yXu8uRgkKvaWd2d8DQvDPnpL)" + "\n" +
+                            "Burning amount: " + balance + "\n" +
+                            "P2P Port: 11994" + "\n" +
+                            "RPC Port 11995" + "\n" +
+                            "[**View block explorer**](http://104.238.153.140:3001/)"
+                    }]
+                };
+                msg.channel.send({
+                    embed
+                });
+                return;
+            }
         });
     }
 };
