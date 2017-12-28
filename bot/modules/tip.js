@@ -285,7 +285,7 @@ exports.tip = {
                     text: "\u00A9 " + Bot.name
                 },
                 author: {
-                    name: "Oops, this command can not use in DM"
+                    name: "Woops, this command can not use in DM"
                 },
                 description: "Please use <#" + ChannelID + "> channel."
             };
@@ -353,7 +353,7 @@ exports.tip = {
                             text: "\u00A9 " + Bot.name
                         },
                         author: {
-                            name: "Ops..."
+                            name: "Woops..."
                         },
                         description: "<@" + msg.author.id + "> Sorry, you're not allowed to tip yourself."
                     };
@@ -421,7 +421,7 @@ exports.soak = {
                     text: "\u00A9 " + Bot.name
                 },
                 author: {
-                    name: "Oops, this command can not use in DM or in this channel..."
+                    name: "Woops, this command can not use in DM or in this channel..."
                 },
                 description: "Please use <#" + ChannelID + "> channel."
             };
@@ -563,7 +563,7 @@ exports.rain = {
                     text: "\u00A9 " + Bot.name
                 },
                 author: {
-                    name: "Oops, this command can not use in DM or in this channel..."
+                    name: "Woops, this command can not use in DM or in this channel..."
                 },
                 description: "Please use <#" + ChannelID + "> channel."
             };
@@ -718,7 +718,7 @@ exports.megasoak = {
                     text: "\u00A9 " + Bot.name
                 },
                 author: {
-                    name: "Oops, this command can not use in DM or in this channel..."
+                    name: "Woops, this command can not use in DM or in this channel..."
                 },
                 description: "Please use <#" + ChannelID + "> channel."
             };
@@ -886,7 +886,7 @@ exports.bet = {
                     text: "\u00A9 " + Bot.name
                 },
                 author: {
-                    name: "Oops, this command can not use in DM or in this channel..."
+                    name: "Woops, this command can not use in DM or in this channel..."
                 },
                 description: "Please use <#" + ChannelID + "> channel."
             };
