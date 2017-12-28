@@ -216,6 +216,24 @@ exports.withdraw = {
                 words[1] = before;
             }
             if (parseFloat(words[1]) <= (parseFloat(before) - 0.1)) {
+                if (parseFloat(words[1]) < 1) {
+                    const embed = {
+                        color: 1741945,
+                        timestamp: new Date(),
+                        footer: {
+                            icon_url: Bot.iconurl,
+                            text: "\u00A9 " + Bot.name
+                        },
+                        author: {
+                            name: "Woops..."
+                        },
+                        description: "Minimum amount for withdraw is **1** " + symbol
+                    };
+                    msg.channel.send({
+                        embed
+                    });
+                    return;
+                }
                 chc.sendFrom(msg.author.id, words[2], parseFloat(words[1]), 1, false, "withdraw", msg.author.id).then((txid, error) => {
                     if (error) {
                         console.log(error);
@@ -362,6 +380,24 @@ exports.tip = {
                     });
                     return;
                 } else {
+                    if (parseFloat(words[1]) < 1) {
+                        const embed = {
+                            color: 1741945,
+                            timestamp: new Date(),
+                            footer: {
+                                icon_url: Bot.iconurl,
+                                text: "\u00A9 " + Bot.name
+                            },
+                            author: {
+                                name: "Woops..."
+                            },
+                            description: "<@" + msg.author.id + "> Minimum amount for tip is **1** " + symbol
+                        };
+                        msg.channel.send({
+                            embed
+                        });
+                        return;
+                    }
                     chc.move(msg.author.id, msg.mentions.members.first().id, parseFloat(words[1]), 1, "tip").then(result => {
                         if (result == "false") {
                             console.log("move fail, result false");
@@ -492,6 +528,26 @@ exports.soak = {
             });
             return;
         }
+
+        if (parseFloat(words[1]) < 1) {
+            const embed = {
+                color: 1741945,
+                timestamp: new Date(),
+                footer: {
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.name
+                },
+                author: {
+                    name: "Woops..."
+                },
+                description: "<@" + msg.author.id + "> Minimum amount for soak is **1** " + symbol
+            };
+            msg.channel.send({
+                embed
+            });
+            return;
+        }
+
         await bot.guilds.array()[0].fetchMembers();
         let presence = bot.guilds.array()[0].members.filter(m => {
             if (m.presence.status === "online") {
@@ -630,6 +686,25 @@ exports.rain = {
                     name: "Insufficient funds..."
                 },
                 description: "<@" + msg.author.id + "> Please deposit your " + symbol + " with **!deposit** command."
+            };
+            msg.channel.send({
+                embed
+            });
+            return;
+        }
+
+        if (parseFloat(words[1]) < 1) {
+            const embed = {
+                color: 1741945,
+                timestamp: new Date(),
+                footer: {
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.name
+                },
+                author: {
+                    name: "Woops..."
+                },
+                description: "<@" + msg.author.id + "> Minimum amount for rain is **1** " + symbol
             };
             msg.channel.send({
                 embed
@@ -783,6 +858,25 @@ exports.megasoak = {
                     name: "Insufficient funds..."
                 },
                 description: "<@" + msg.author.id + "> Please deposit your " + symbol + " with **!deposit** command."
+            };
+            msg.channel.send({
+                embed
+            });
+            return;
+        }
+
+        if (parseFloat(words[1]) < 1) {
+            const embed = {
+                color: 1741945,
+                timestamp: new Date(),
+                footer: {
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.name
+                },
+                author: {
+                    name: "Woops..."
+                },
+                description: "<@" + msg.author.id + "> Minimum amount for megasoak is **1** " + symbol
             };
             msg.channel.send({
                 embed
