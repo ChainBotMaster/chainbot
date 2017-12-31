@@ -254,7 +254,10 @@ exports.market = {
         let sell_value = "```";
 
         let url = "https://www.cryptopia.co.nz/api/GetMarketOrders/CHC_BTC/10";
-        needle.get(url, function(error, response) {
+        var options = {
+            rejectUnauthorized: false
+        }
+        needle.get(url, options, function(error, response) {
             if (error || response.statusCode !== 200) {
                 embed = {
                     timestamp: new Date(),
