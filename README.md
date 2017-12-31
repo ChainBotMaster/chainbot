@@ -25,7 +25,6 @@
     * What is a ChainCoin?
 * **!market**
     * See all buy/sell orders.
-    * This command only can be use in #alt-coins
 * **!masternode**
     * What is a Masternode?
 * **!megasoak [amount]**
