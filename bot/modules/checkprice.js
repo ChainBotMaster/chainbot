@@ -245,34 +245,15 @@ exports.price = {
 
 exports.market = {
     usage: "",
-    description: "See all Chaincoin buy/sell orders.\n    This command only can be use in <#" + ChannelID + ">",
+    description: "See all Chaincoin buy/sell orders.",
     process: function(bot, msg, suffix) {
         let embed;
-        if (!inPrivate(msg) && !ChannelID.includes(msg.channel.id)) {
-            embed = {
-                color: 1741945,
-                timestamp: new Date(),
-                footer: {
-                    icon_url: Bot.iconurl,
-                    text: "\u00A9 " + Bot.name
-                },
-                author: {
-                    name: "Woops, Wrong Channel..."
-                },
-                description: "Please use <#" + ChannelID + "> or DMs bot."
-            };
-            msg.channel.send({
-                embed
-            });
-            return;
-        }
-
         let field_buy = "Buy offers:";
         let buy_value = "```";
         let field_sell = "Sell offers: ";
         let sell_value = "```";
 
-        let url = "https://www.cryptopia.co.nz/api/GetMarketOrders/CHC_BTC/5";
+        let url = "https://www.cryptopia.co.nz/api/GetMarketOrders/CHC_BTC/10";
         needle.get(url, function(error, response) {
             if (error || response.statusCode !== 200) {
                 embed = {
@@ -297,7 +278,7 @@ exports.market = {
                     var buy = response.body.Data.Buy[i];
                     var price = parseFloat(buy.Price) * 100000000;
                     var amount = buy.Volume;
-                    if (i == 4)
+                    if (i == 9)
                         buy_value = buy_value + "Price: " + price.toFixed(0) + " Satoshi,  Volume: " + amount + " CHC```";
                     else
                         buy_value = buy_value + "Price: " + price.toFixed(0) + " Satoshi,  Volume: " + amount + " CHC\n";
@@ -307,7 +288,7 @@ exports.market = {
                     var sell = response.body.Data.Sell[i];
                     var price = parseFloat(sell.Price) * 100000000;
                     var amount = sell.Volume;
-                    if (i == 4)
+                    if (i == 9)
                         sell_value = sell_value + "Price: " + price.toFixed(0) + " Satoshi,  Volume: " + amount + " CHC```";
                     else
                         sell_value = sell_value + "Price: " + price.toFixed(0) + " Satoshi,  Volume: " + amount + " CHC\n";
