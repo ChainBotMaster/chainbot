@@ -275,7 +275,7 @@ bot.on("ready", async function() {
             "**Espanol**  :flag_es: \n\n" +
             "**Chinese**  :flag_cn: \n\n" +
             "**German**  :flag_de: \n\n" +
-            "**Russian**  :flag_rs: \n\n" +
+            "**Russian**  :flag_ru: \n\n" +
             "**French**  :flag_fr: "
     };
 
