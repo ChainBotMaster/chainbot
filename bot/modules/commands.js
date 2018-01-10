@@ -48,7 +48,8 @@ exports.info = {
                     value: "[**Github**](https://github.com/chaincoin/chaincoin)" +
                         "\n[**Discord**](https://discord.gg/NabdcJ7)" +
                         "\n[**Twitter**](https://twitter.com/chaincointeam)" +
-                        "\n[**Bitcoin Talk**](https://bitcointalk.org/index.php?topic=422149.0)"
+                        "\n[**Bitcoin Talk**](https://bitcointalk.org/index.php?topic=422149.0)" +
+			"\n[**Message Board**](http://www.chcforum.com/)"
                 },
                 {
                     name: "Development roadmap",
