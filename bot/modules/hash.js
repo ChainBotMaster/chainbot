@@ -171,7 +171,7 @@ exports.hash = {
 
         function sendProfitInfo(bot, msg, suffix) {
             let embed;
-            needle.get("http://104.238.153.140:3001/api/getdifficulty", function(error, response) {
+            needle.get("http://104.238.153.140:3001/api/getnetworkhashps", function(error, response) {
                 if (error || response.statusCode !== 200) {
                     embed = {
                         color: 1741945,
@@ -189,16 +189,18 @@ exports.hash = {
                         embed
                     });
                 } else {
-                    let difficulty = Number(response.body); // network difficulty
-                    let hashrate = parseFloat(myhashrate) * Math.pow(10, 6); // in Mh/s
-                    let reward = Number(4.4); // block reward
-                    let secondperhour = 60 * 60; //number second per hours
+                    let hashrate = parseFloat(myhashrate) * Math.pow(10, 6); // in mega hashrate/second
+                    let rewardperblock = Number(4.4); // block reward
+                    let currenthashrate = Number(response.body); // current hashrate/secord
+                    let percentage = (hashrate / (currenthashrate + hashrate)) * 100;
+                    let blocktime = Number(90);
+                    let totalrewardperhour = ((60 * 60) / blocktime * rewardperblock) * percentage;
 
-                    let CHC = (reward * hashrate * secondperhour) / (difficulty * Math.pow(2, 32));
-                    let CHC24 = (reward * hashrate * secondperhour * 24) / (difficulty * Math.pow(2, 32));
-                    let CHC1w = (reward * hashrate * secondperhour * 24 * 7) / (difficulty * Math.pow(2, 32));
-                    let CHC1m = (reward * hashrate * secondperhour * 24 * 30) / (difficulty * Math.pow(2, 32));
-                    let CHC1y = (reward * hashrate * secondperhour * 24 * 30 * 12) / (difficulty * Math.pow(2, 32));
+                    let CHC = totalrewardperhour;
+                    let CHC24 = totalrewardperhour * 24;
+                    let CHC1w = totalrewardperhour * 24 * 7;
+                    let CHC1m = totalrewardperhour * 24 * 30;
+                    let CHC1y = totalrewardperhour * 24 * 30 * 12;
 
                     needle.get("https://api.coinmarketcap.com/v1/ticker/chaincoin/", function(error, response) {
                         let author1 = "With " + numberWithCommas(parseFloat(myhashrate)) + " Mh/s and Current Difficulty " + difficulty.toFixed(0);
