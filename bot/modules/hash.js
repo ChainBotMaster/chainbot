@@ -203,7 +203,7 @@ exports.hash = {
                     let CHC1y = totalrewardperhour * 24 * 30 * 12;
 
                     needle.get("https://api.coinmarketcap.com/v1/ticker/chaincoin/", function(error, response) {
-                        let author1 = "With " + numberWithCommas(parseFloat(myhashrate)) + " Mh/s and Current Difficulty " + difficulty.toFixed(0);
+                        let author1 = "With " + numberWithCommas(parseFloat(myhashrate)) + " Mh/s";
                         let name1 = "You can potentially earn the following amounts of **CHC**"
                         let val1 = "```1 Hour  = " + numberWithCommas(CHC.toFixed(8)) + "\n" +
                             "1 Day   = " + numberWithCommas(CHC24.toFixed(8)) + "\n" +
