@@ -192,7 +192,7 @@ exports.hash = {
                     let hashrate = parseFloat(myhashrate) * Math.pow(10, 6); // in mega hashrate/second
                     let rewardperblock = Number(4.4); // block reward
                     let currenthashrate = Number(response.body); // current hashrate/secord
-                    let percentage = (hashrate / (currenthashrate + hashrate)) * 100;
+                    let percentage = hashrate / (currenthashrate + hashrate);
                     let blocktime = Number(90);
                     let totalrewardperhour = ((60 * 60) / blocktime * rewardperblock) * percentage;
 
