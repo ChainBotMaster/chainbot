@@ -205,18 +205,18 @@ exports.hash = {
                     needle.get("https://api.coinmarketcap.com/v1/ticker/chaincoin/", function(error, response) {
                         let author1 = "With " + numberWithCommas(parseFloat(myhashrate)) + " Mh/s";
                         let name1 = "You can potentially earn the following amounts of **CHC**"
-                        let val1 = "```1 Hour  = " + numberWithCommas(CHC.toFixed(8)) + "\n" +
-                            "1 Day   = " + numberWithCommas(CHC24.toFixed(8)) + "\n" +
-                            "1 Week  = " + numberWithCommas(CHC1w.toFixed(8)) + "\n" +
-                            "1 Month = " + numberWithCommas(CHC1m.toFixed(8)) + " \n" +
-                            "1 Year  = " + numberWithCommas(CHC1y.toFixed(8)) + "```";
+                        let val1 = "```1 Hour  = " + CHC.toFixed(8) + "\n" +
+                            "1 Day   = " + CHC24.toFixed(8) + "\n" +
+                            "1 Week  = " + CHC1w.toFixed(8) + "\n" +
+                            "1 Month = " + CHC1m.toFixed(8) + " \n" +
+                            "1 Year  = " + CHC1y.toFixed(8) + "```";
 
                         let name2 = "Equivalent amounts of **BTC**"
-                        let val2 = "```1 Hour  = " + numberWithCommas((CHC * Number(response.body[0].price_btc)).toFixed(8)) + "\n" +
-                            "1 Day   = " + numberWithCommas((CHC24 * Number(response.body[0].price_btc)).toFixed(8)) + "\n" +
-                            "1 Week  = " + numberWithCommas((CHC1w * Number(response.body[0].price_btc)).toFixed(8)) + "\n" +
-                            "1 Month = " + numberWithCommas((CHC1m * Number(response.body[0].price_btc)).toFixed(8)) + " \n" +
-                            "1 Year  = " + numberWithCommas((CHC1y * Number(response.body[0].price_btc)).toFixed(8)) + "```";
+                        let val2 = "```1 Hour  = " + (CHC * Number(response.body[0].price_btc)).toFixed(8) + "\n" +
+                            "1 Day   = " + (CHC24 * Number(response.body[0].price_btc)).toFixed(8) + "\n" +
+                            "1 Week  = " + (CHC1w * Number(response.body[0].price_btc)).toFixed(8) + "\n" +
+                            "1 Month = " + (CHC1m * Number(response.body[0].price_btc)).toFixed(8) + " \n" +
+                            "1 Year  = " + (CHC1y * Number(response.body[0].price_btc)).toFixed(8) + "```";
 
                         let name3 = "Equivalent amounts of **USD**"
                         let val3 = "```1 Hour  = " + numberWithCommas((CHC * Number(response.body[0].price_usd)).toFixed(2)) + "\n" +
