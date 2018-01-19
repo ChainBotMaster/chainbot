@@ -183,7 +183,7 @@ bot.on("ready", async function() {
     );
     require("./plugins.js").init();
     console.log("type " + Bot.prefix + "help in Discord for a commands list.");
-    bot.user.setGame(Bot.prefix + "help");
+    bot.user.setActivity(Bot.prefix + "help");
 
     let msglist = await bot.channels.get(ChannelID).fetchMessages();
     bot.channels.get(ChannelID).bulkDelete(msglist);
