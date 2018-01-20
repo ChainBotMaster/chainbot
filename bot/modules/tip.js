@@ -105,30 +105,66 @@ exports.log = function(bot) {
 exports.deposit = {
     usage: "",
     description: "Get deposit address.",
-    process: function(bot, msg, suffix) {
-        chc.getAccountAddress(msg.author.id).then((result, error) => {
-            if (error) {
-                console.log(error);
-                return;
-            } else {
-                const embed = {
-                    color: 1741945,
-                    timestamp: new Date(),
-                    footer: {
-                        icon_url: Bot.iconurl,
-                        text: "\u00A9 " + Bot.name
-                    },
-                    author: {
-                        name: symbol + " deposit address"
-                    },
-                    description: "Hi <@" + msg.author.id + ">, Here's your generated tCHC deposit address:```" + result + "```"
-                };
-                msg.author.send({
-                    embed
-                });
-                return;
-            }
-        });
+    process: async function(bot, msg, suffix) {
+		if (!inPrivate(msg)) {
+            const embed = {
+                color: 1741945,
+                timestamp: new Date(),
+                footer: {
+                    icon_url: Bot.iconurl,
+                    text: "\u00A9 " + Bot.name
+                },
+                description: "Generated " + symbol +" deposit address sent as private message."
+            };
+            msg.channel.send({
+                embed
+            });
+        }
+		
+		let address = await chc.getAddressesByAccount(msg.author.id);
+		
+		if(address[0] == null) {
+			chc.getAccountAddress(msg.author.id).then((result, error) => {
+				if (error) {
+					console.log(error);
+					return;
+				} else {
+					const embed = {
+						color: 1741945,
+						timestamp: new Date(),
+						footer: {
+							icon_url: Bot.iconurl,
+							text: "\u00A9 " + Bot.name
+						},
+						author: {
+							name: symbol + " deposit address"
+						},
+						description: "Hi <@" + msg.author.id + ">, Here's your generated " + symbol +" deposit address:```" + result + "```"
+					};
+					msg.author.send({
+						embed
+					});
+					return;
+				}
+			});
+		} else {
+			const embed = {
+				color: 1741945,
+				timestamp: new Date(),
+				footer: {
+					icon_url: Bot.iconurl,
+					text: "\u00A9 " + Bot.name
+				},
+				author: {
+					name: symbol + " deposit address"
+				},
+				description: "Hi <@" + msg.author.id + ">, Here's your generated " + symbol +" deposit address:```" + address[0] + "```"
+			};
+			msg.author.send({
+				embed
+			});
+			return;
+		}       
     }
 };
 
