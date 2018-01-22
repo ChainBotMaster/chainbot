@@ -3,7 +3,7 @@
         "token":"",
         "prefix":"!",
         "name": "",
-        "iconurl": "https://raw.githubusercontent.com/ChainBotMaster/chainbot/master/bot/image/chaincoin.png",
+        "iconurl": "https://raw.githubusercontent.com/ChainBotMaster/chainbot/master/bot/image/newchc-01.png",
         "debug":false
     },
     "chccore":{  
