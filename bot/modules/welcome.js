@@ -131,7 +131,7 @@ exports.welcome = {
             },
             description: "<@" + msg.mentions.members.first().id + ">, Welcome to Chaincoin's Discord. You are in our Chainster Chat, Please see <#" + SupportID + "> or <#" + MasternodeID + "> if you need technical support.",
             image: {
-                url: Bot.iconurl
+                url: "https://raw.githubusercontent.com/ChainBotMaster/chainbot/master/bot/image/chccoindesignnew-02.png"
             }
 
         };
