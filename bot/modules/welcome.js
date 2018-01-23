@@ -155,7 +155,7 @@ exports.join = {
             },
             description: "You Can Join EVEN MORE Channels in <#" + JoinID + ">",
             image: {
-                url: "https://raw.githubusercontent.com/ChainBotMaster/chainbot/master/bot/image/chcjoinchannel-01.png"
+                url: "https://raw.githubusercontent.com/ChainBotMaster/chainbot/master/bot/image/chcjoinchannel-02.png"
             }
 
         };
