@@ -19,7 +19,7 @@ exports.commands = [
 
 exports.onUserJoin = function(bot) {
     bot.on("guildMemberAdd", member => {
-        const embed = {
+        let embed = {
             color: 1741945,
             timestamp: new Date(),
             footer: {
@@ -33,6 +33,36 @@ exports.onUserJoin = function(bot) {
             image: {
                 url: Bot.iconurl
             }
+        };
+        member.send({
+            embed
+        });
+	
+	embed = {
+            color: 1741945,
+            timestamp: new Date(),
+            footer: {
+                icon_url: Bot.iconurl,
+                text: "\u00A9 " + Bot.name
+            },
+            
+            fields: [{
+                name: "Everyone, please offer feedback or point out corrections as needed here:",
+                value: "IMPORTANT: PLEASE NOTE THAT MASTERNODE OPERATORS ARE NOT RECEIVING REGULAR REWARDS DUE TO A NETWORK ISSUE THAT AFFECTS ALL DASH-FORKED COINS. WE HAVE EVALUATED THE PROBLEM AND HAVE DETERMINED THAT THE BEST WAY TO FIX IT IS A MAJOR WALLET UPDATE THAT WILL REQUIRE A HARD FORK. THIS HARD FORK IS CURRENTLY SCHEDULED FOR THE UPCOMING BLOCK HALVING WHICH IS SCHEDULED TO OCCUR AT BLOCK 1401600 IN EARLY MARCH. BUT AS OF THE WRITING OF THIS MESSAGE OUR NEW WALLET IS NOT READY FOR TESTNET. WE WILL UPDATE THIS MESSAGE, AS WELL AS TWEET AND POST IN OUR DISCORD WHEN WE HAVE ADDITIONAL INFORMATION TO SHARE. "
+            }, {
+                name: "ATTENTION: Please Take A Moment To Read This Important Message.",
+                value: "We are grateful you have come to learn more about Chaincoin and our community. We set this message to be Direct Messaged to each new member of our community in a concerted effort to make each of you aware of the above issue. It has also been pinned as our top tweet on Twitter since Dec.7th and it is prominently highlighted on each page of our Masternode section of the [website](https://www.chaincoin.org)."
+            }, {
+                name: "What are your options if you have purchased Chaincoin to run a Masternode before learning of this block rewards issue for Masternodes?",
+                value: "1. You can go ahead and SET UP A MASTERNODE to support the network and earn sporadic and greatly reduced rewards." + "\n" +
+                "2. You can HOLD your Chaincoin in the Chaincoin wallet, available on the [website](https://www.chaincoin.org), and wait for the upcoming hardfork to fix the issue." + "\n" +
+                "3. You can SELL your Chaincoin and repurchase, if desired, when the upcoming hardfork and fix have gone into effect."
+            }, {
+                name: "What are your options if you have NOT YET purchased Chaincoin to run a Masternode before learning of this block rewards issue for Masternodes?",
+                value: "1. You can PURCHASE CHC at [Cryptopia](https://cryptopia.co.nz/) and join in the community here and contribute to the coins development where you can add value in anticipation of the upcoming hardfork and fix." + "\n" +
+                "2. You can decide to NOT purchase CHC and wait for the fix to go into effect which is scheduled for block 1401600 in early March." + "\n\n" +
+                "No matter what you decide, we are grateful for your interest and are working diligently towards a resolution to the issue affecting our Masternode holders and the rewards they are receiving in exchange for the services they provide to the network which include Instant Send, Private Send as well as taking part in governance to help decide the development path."
+            }]
         };
         member.send({
             embed
