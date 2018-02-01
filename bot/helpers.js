@@ -1,9 +1,18 @@
 let config = require("config");
-let permRanks = config.get("moderation");
+let role = config.get("role");
 
-// Checks if user is allowed to use a command only for mods/team members
-exports.hasPerms = function(msg) {
-    if (msg.member.roles.some(r => permRanks.perms.includes(r.name))) {
+// Checks if user is allowed to use a command only for Chainster user
+exports.hasPermsChainster = function(msg) {
+    if (msg.member.roles.some(r => role.chainster.includes(r.name))) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+// Checks if user is allowed to use a command only for Support user
+exports.hasPermsSupport = function(msg) {
+    if (msg.member.roles.some(r => role.support.includes(r.name))) {
         return true;
     } else {
         return false;
