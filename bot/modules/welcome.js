@@ -5,7 +5,7 @@ let ChannelID = config.get("Channels").general;
 let SupportID = config.get("Channels").support;
 let MasternodeID = config.get("Channels").masternode;
 let JoinID = config.get("Channels").joinchannels;
-let hasPerms = require("../helpers.js").hasPerms;
+let hasPermsChainster = require("../helpers.js").hasPermsChainster;
 let inPrivate = require("../helpers.js").inPrivate;
 exports.custom = [
     "onUserJoin"
@@ -72,7 +72,7 @@ exports.onUserJoin = function(bot) {
 
 exports.welcome = {
     usage: "**[@username]**",
-    description: "Send welcome message to specified user.\n    This command only can be use in <#" + ChannelID + "> and people has role as Moderator & Chainster",
+    description: "Send welcome message to specified user.\n    This command only can be use in <#" + ChannelID + "> and user has Chainster role",
     process: function(bot, msg, suffix) {
         let embed;
         if (!ChannelID.includes(msg.channel.id) || inPrivate(msg)) {
@@ -113,7 +113,7 @@ exports.welcome = {
             }
         }
 
-        if (suffix == "") {
+        if (suffix == "") { /*
             embed = {
                 color: 1741945,
                 timestamp: new Date(),
@@ -128,10 +128,10 @@ exports.welcome = {
             };
             msg.channel.send({
                 embed
-            });
+            }); */
             return;
         }
-        if (!hasPerms(msg)) {
+        if (!hasPermsChainster(msg)) {/*
             embed = {
                 color: 1741945,
                 timestamp: new Date(),
@@ -146,7 +146,7 @@ exports.welcome = {
             };
             msg.channel.send({
                 embed
-            });
+            }); */
             return;
         }
         embed = {
