@@ -11,16 +11,20 @@
         "username":"",
         "password":""
     },
-    "moderation":{  
-        "perms":[  
-            "Moderator",
-            "Chainster"
-        ]
+    "role":{  
+        "chainster":"Chainster",
+		"support":"Support"
     },
+    "mongodb":{
+		"url": "",
+		"db": ""
+	},
     "Channels":{  
         "mining":"376589052444672001",
         "altcoin":"376583883426365460",
         "support":"376580497129734154",
+        "ticketcloselog":"",
+		"supportprivate":"",
         "spanish":"380141655539318785",
         "general":"376563578599112705",
         "chaintipster":"384932211956121600",
@@ -30,7 +34,8 @@
     "id":{  
         "self":"379917668116856833",
         "other":[  
-            "324631108731928587"
+            "324631108731928587",
+            "396465506707832844"
         ]
     },
     "coin":{  
