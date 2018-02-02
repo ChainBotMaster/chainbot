@@ -314,10 +314,10 @@ function checkMessageForCommand(msg, isEdit) {
             msg.author.username +
             " as command"
         );
-        var cmdTxt = msg.content.split(" ")[0].substring(Bot.prefix.length).toLowerCase();
+        var cmdTxt = msg.content.split(" ")[0].substring(Bot.prefix.length);
         var suffix = msg.content.substring(
             cmdTxt.length + Bot.prefix.length + 1
-        ).toLowerCase();
+        );
         //-- break
         //add one for the ! and one for the space
         /*   if (msg.isMentioned(bot.user)) {
